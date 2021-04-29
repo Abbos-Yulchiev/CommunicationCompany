@@ -2,10 +2,12 @@ package uz.pdp.communicationcompany.payload;
 
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
+import uz.pdp.communicationcompany.entity.Role;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Set;
 
 @Data
 public class RegisterDTO {
@@ -28,5 +30,5 @@ public class RegisterDTO {
     /**
      * For describe user Position
      */
-    private String roleName;
+    private Set<Role> roleName;
 }

@@ -3,6 +3,7 @@ package uz.pdp.communicationcompany.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -19,7 +20,8 @@ public class CompanyBranch {
     @ManyToOne
     private Company company;
 
-    @OneToOne
+    @ToString.Exclude
+    @OrderBy(value = "city_name asc, street_name asc")
+    @OneToOne(mappedBy = "company", cascade = CascadeType.ALL)
     private Address address;
-
 }

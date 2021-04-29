@@ -55,7 +55,7 @@ public class TariffsService {
 
             Tariffs tariffs = new Tariffs();
             tariffs.setDescription(tariffsDTO.getDescription());
-            tariffs.setDetail(tariffsDTO.getDetail());
+            tariffs.setDetails(tariffsDTO.getDetails());
             tariffs.setName(tariffName);
             tariffs.setPhysicalPerson(tariffsDTO.isPhysicalPerson());
             tariffsRepository.save(tariffs);
@@ -81,13 +81,13 @@ public class TariffsService {
             }
         }
         if (permission) {
-            boolean existsByName = tariffsRepository.existsByName(tariffName);
+            boolean existsByName = tariffsRepository.existsByNameAndIdNot(tariffName, tariffId);
             if (existsByName)
                 return new ApiResponse("The tariff name already exist!", false);
 
             Tariffs tariffs = optionalTariffs.get();
             tariffs.setDescription(tariffsDTO.getDescription());
-            tariffs.setDetail(tariffsDTO.getDetail());
+            tariffs.setDetails(tariffsDTO.getDetails());
             tariffs.setName(tariffName);
             tariffs.setPhysicalPerson(tariffsDTO.isPhysicalPerson());
             tariffsRepository.save(tariffs);

@@ -24,9 +24,11 @@ public class Tariffs {
     @Column(nullable = false)
     private boolean physicalPerson;
 
+    private Double price;
+
     @Column(nullable = false)
     private String description;
 
     @ManyToMany
-    private List<Detail> detail;
+    private List<Details> details;
 }

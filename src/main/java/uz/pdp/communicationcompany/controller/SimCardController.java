@@ -2,29 +2,25 @@ package uz.pdp.communicationcompany.controller;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import uz.pdp.communicationcompany.payload.ApiResponse;
 import uz.pdp.communicationcompany.payload.SimCardDTO;
+import uz.pdp.communicationcompany.payload.SimCardServiceDTO;
 import uz.pdp.communicationcompany.service.ServiceForSimCard;
 
 @RestController
 @RequestMapping(value = "/api/simCard")
 public class SimCardController {
 
-    final ServiceForSimCard simCardExtraService;
+    final ServiceForSimCard simCardService;
 
-    public SimCardController(ServiceForSimCard simCardExtraService) {
-        this.simCardExtraService = simCardExtraService;
+    public SimCardController(ServiceForSimCard simCardService) {
+        this.simCardService = simCardService;
     }
 
-
     @PostMapping
-    public HttpEntity<?> addSimCard(@RequestBody SimCardDTO simcardDTO) {
-
-        ApiResponse apiResponse = simCardExtraService.addSimCardService(simcardDTO);
-        return ResponseEntity.status(apiResponse.isStatus() ? 200 : 409).body(apiResponse);
+    public HttpEntity<?> registerSimCard(@RequestBody SimCardDTO simCardDTO) {
+        ApiResponse response = simCardService.registerSimCard(simCardDTO);
+        return ResponseEntity.status(response.isStatus() ? 201 : 401).body(response);
     }
 }

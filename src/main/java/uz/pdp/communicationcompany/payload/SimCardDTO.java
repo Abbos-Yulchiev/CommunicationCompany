@@ -7,13 +7,7 @@ import java.util.UUID;
 @Data
 public class SimCardDTO {
 
-    private String phoneNumber;
-
-    private boolean sell;
-
+    private Integer code;           // simkarta kodi : 94, 93, 97, ...
+    private UUID customerId;
     private Integer companyId;
-
-    private UUID usersId;
-
-    private Integer tariffsId;
 }

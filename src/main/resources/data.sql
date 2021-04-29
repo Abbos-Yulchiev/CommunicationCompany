@@ -5,7 +5,8 @@ values (1, 'DIRECTOR_OF_COMPANY'),
        (4, 'EMPLOYEE_MANAGER'),
        (5, 'HEAD_OF_BRANCH'),
        (6, 'EMPLOYEE'),
-       (7, 'CUSTOMER');
+       (7, 'CUSTOMER'),
+       (8, 'TARIFF_MANAGER');
 
 insert into service_type (id, name, description)
 values (1, 'MB', 'Net traffic'),

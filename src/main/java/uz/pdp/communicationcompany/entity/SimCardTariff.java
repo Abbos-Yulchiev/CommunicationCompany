@@ -7,32 +7,30 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.List;
-import java.util.Set;
 
-@Data
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-public class SimCard {
+@Data
+public class SimCardTariff {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Integer id;
 
-    private String phoneNumber;
-
-    private boolean sell;
-
-    private Double balance;
+    @ManyToOne
+    private SimCard simCard;
 
     @ManyToOne
-    private Company company;
+    private Tariffs tariff;
 
-    @ManyToOne
-    private Users users;
+    private boolean status = true;         // true - active  false - not active
 
+    @Column(nullable = false)
     @CreationTimestamp
-    private Timestamp created_at;
+    private Timestamp dateOfPurchase;      // Paket xarid qilingan sana va vaqt
+
+    @Transient
+    private Timestamp expireDate;
 
 }

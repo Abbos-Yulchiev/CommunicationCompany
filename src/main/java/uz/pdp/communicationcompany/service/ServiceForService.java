@@ -18,7 +18,6 @@ public class ServiceForService {
         this.servicesRepository = servicesRepository;
     }
 
-
     public ApiResponse addServices(ServicesDTO servicesDTO) {
 
         boolean existsByName = servicesRepository.existsByName(servicesDTO.getName());

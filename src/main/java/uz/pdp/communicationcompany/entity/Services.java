@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Set;
+
 
 @Data
 @AllArgsConstructor
@@ -24,4 +24,6 @@ public class Services {
 
     private Double price;
 
+    @ManyToOne
+    private Details details;
 }

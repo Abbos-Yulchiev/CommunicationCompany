@@ -11,7 +11,7 @@ import uz.pdp.communicationcompany.service.ServiceForService;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/api/service")
+@RequestMapping(value = "/api/services")
 public class ServiceController {
 
 

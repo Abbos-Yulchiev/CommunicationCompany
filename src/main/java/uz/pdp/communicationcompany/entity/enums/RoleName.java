@@ -7,6 +7,7 @@ public enum RoleName {
     NUMBERS_MANAGER,
     EMPLOYEE_MANAGER,
     HEAD_OF_BRANCH,
+    TARIFF_MANAGER,
     EMPLOYEE,
     CUSTOMER
 }

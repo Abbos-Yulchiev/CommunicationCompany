@@ -3,11 +3,8 @@ package uz.pdp.communicationcompany.controller;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import uz.pdp.communicationcompany.entity.Entertainment;
 import uz.pdp.communicationcompany.entity.Role;
 import uz.pdp.communicationcompany.payload.ApiResponse;
-import uz.pdp.communicationcompany.payload.EntertainmentDTO;
-import uz.pdp.communicationcompany.payload.RoleDTO;
 import uz.pdp.communicationcompany.service.RoleService;
 
 import java.util.List;

@@ -1,7 +1,7 @@
 package uz.pdp.communicationcompany.payload;
 
 import lombok.Data;
-import uz.pdp.communicationcompany.entity.Detail;
+import uz.pdp.communicationcompany.entity.Details;
 
 import javax.validation.constraints.NotNull;
 import java.util.List;
@@ -20,5 +20,8 @@ public class TariffsDTO {
     private String description;
 
     @NotNull
-    private List<Detail> detail;
+    private Double price;
+
+    @NotNull
+    private List<Details> details;
 }

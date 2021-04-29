@@ -1,5 +1,6 @@
 package uz.pdp.communicationcompany.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,4 +23,9 @@ public class Address {
 
     @Column(nullable = false)
     private String streetName;
+
+    @JsonIgnore
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "company_id", nullable = false)
+    private Company company;
 }

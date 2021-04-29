@@ -4,10 +4,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import uz.pdp.communicationcompany.entity.Employee;
-import uz.pdp.communicationcompany.entity.Entertainment;
 import uz.pdp.communicationcompany.entity.Role;
 import uz.pdp.communicationcompany.payload.ApiResponse;
-import uz.pdp.communicationcompany.payload.RoleDTO;
 import uz.pdp.communicationcompany.repository.RoleRepository;
 
 import java.util.List;
