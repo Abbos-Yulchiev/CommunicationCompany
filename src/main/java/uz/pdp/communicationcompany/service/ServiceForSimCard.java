@@ -7,21 +7,21 @@ import uz.pdp.communicationcompany.entity.Employee;
 import uz.pdp.communicationcompany.entity.Role;
 import uz.pdp.communicationcompany.entity.SimCardService;
 import uz.pdp.communicationcompany.payload.ApiResponse;
-import uz.pdp.communicationcompany.payload.SimCardServiceDTO;
+import uz.pdp.communicationcompany.payload.SimCardDTO;
 import uz.pdp.communicationcompany.repository.SimCardRepository;
 
 import java.util.Set;
 
 @Service
-public class SimCardExtraService {
+public class ServiceForSimCard {
 
     final SimCardRepository simCardRepository;
 
-    public SimCardExtraService(SimCardRepository simCardRepository) {
+    public ServiceForSimCard(SimCardRepository simCardRepository) {
         this.simCardRepository = simCardRepository;
     }
 
-    public ApiResponse addSimCardService(SimCardServiceDTO simCardServiceDTO) {
+    public ApiResponse addSimCardService(SimCardDTO simCardDTO) {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         Employee employee = (Employee) authentication.getPrincipal();
@@ -33,9 +33,9 @@ public class SimCardExtraService {
                 break;
             }
         }
-       /* if (permission) {
+        /*if (permission) {
 
-            simCardRepository.findById(simCardServiceDTO.ge)
+            simCardRepository.findById(simCardDTO.ge);
             SimCardService simCardService = new SimCardService();
             simCardService.setSimCard();
         }*/

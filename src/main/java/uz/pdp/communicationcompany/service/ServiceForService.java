@@ -10,13 +10,14 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ExtraService {
+public class ServiceForService {
 
     final ServicesRepository servicesRepository;
 
-    public ExtraService(ServicesRepository servicesRepository) {
+    public ServiceForService(ServicesRepository servicesRepository) {
         this.servicesRepository = servicesRepository;
     }
+
 
     public ApiResponse addServices(ServicesDTO servicesDTO) {
 

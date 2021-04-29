@@ -12,17 +12,16 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Role implements GrantedAuthority {
+public class Role implements GrantedAuthority{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Enumerated(EnumType.STRING)
-    private RoleName roleName;
+    private String roleName;
 
     @Override
     public String getAuthority() {
-        return roleName.name();
+        return roleName;
     }
 }

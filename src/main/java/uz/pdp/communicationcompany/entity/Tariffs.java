@@ -22,6 +22,9 @@ public class Tariffs {
     private String name;
 
     @Column(nullable = false)
+    private boolean physicalPerson;
+
+    @Column(nullable = false)
     private String description;
 
     @ManyToMany

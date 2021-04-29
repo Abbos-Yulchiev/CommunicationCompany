@@ -72,7 +72,7 @@ public class Employee implements UserDetails {
     /*Userning huquqlari*/
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return this.roles;
+        return (Collection<? extends GrantedAuthority>) this.roles;
     }
 
     /*Usrening usernamini qytaruvchi methodi*/

@@ -1,19 +1,17 @@
 package uz.pdp.communicationcompany.payload;
 
-import lombok.Data;
 
-import java.util.UUID;
+import lombok.Data;
+import uz.pdp.communicationcompany.entity.Services;
+
+import java.sql.Date;
 
 @Data
 public class SimCardServiceDTO {
 
-    private String phoneNumber;
-
-    private boolean sell;
-
-    private Integer companyId;
-
-    private UUID usersId;
-
-    private Integer tariffsId;
+    private Integer simCardId;
+    private Services services;
+    private boolean status;
+    private Date startDate;
+    private Date endDate;
 }

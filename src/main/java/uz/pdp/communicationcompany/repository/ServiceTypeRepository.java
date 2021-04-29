@@ -2,8 +2,8 @@ package uz.pdp.communicationcompany.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
-import uz.pdp.communicationcompany.entity.USSDCodes;
+import uz.pdp.communicationcompany.entity.ServiceType;
 
-@RepositoryRestResource(path = "ussdCodes")
-public interface UssdCodeRepository extends JpaRepository<USSDCodes, Integer> {
+@RepositoryRestResource(path = "serviceType")
+public interface ServiceTypeRepository extends JpaRepository<ServiceType, Integer> {
 }

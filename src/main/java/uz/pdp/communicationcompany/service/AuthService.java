@@ -60,7 +60,7 @@ public class AuthService implements UserDetailsService {
         employee.setLastName(registerDTO.getLastName());
 
         employee.setPassword(passwordEncoder.encode(registerDTO.getPassword()));
-        employee.setRoles(Collections.singleton(roleRepository.findByRoleName(RoleName.USER)));
+        employee.setRoles(Collections.singleton(roleRepository.findByRoleName(RoleName.EMPLOYEE)));
 
         employee.setEmailCode(UUID.randomUUID().toString());
 
